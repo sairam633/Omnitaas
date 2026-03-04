@@ -1,0 +1,26 @@
+# Dependencies
+/node_modules
+/package-lock.json
+
+# Environment variables
+.env
+.env.local
+
+# Build artifacts and temporary files
+/build
+/dist
+/tmp
+*.log
+npm-debug.log*
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Optional: if frontend/backend are subfolders
+# Uncomment and adjust paths as needed
+# /frontend/node_modules
+# /backend/node_modules
+# /frontend/build
