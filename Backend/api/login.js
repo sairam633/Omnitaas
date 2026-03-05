@@ -1,5 +1,7 @@
 export default function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", process.env.FRONTEND_URL);
+  const allowedOrigin = process.env.FRONTEND_URL || "*";
+
+  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -11,12 +13,14 @@ export default function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { username, password } = req.body;
+  const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
-  if (username === "admin" && password === "admin") {
+  const { username, password } = body;
+
+  if (username === "user123" && password === "user@123") {
     return res.status(200).json({
       message: "Login successful",
-      username: username,
+      username,
     });
   }
 
