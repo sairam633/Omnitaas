@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+.p-password {
+  width: 100%;
+}
+
+.p-password input {
+  width: 100%;
+}
+
+.p-password {
+  width: 100%;
+  display: flex;
+}
+
+.p-password input {
+  width: 100%;
+}
