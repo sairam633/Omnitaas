@@ -13,7 +13,7 @@ export default function handler(req, res) {
 
   const { username, password } = req.body;
 
-  if (username === "user123" && password === "user@123") {
+  if (username === "admin" && password === "admin") {
     return res.status(200).json({
       message: "Login successful",
       username: username,
